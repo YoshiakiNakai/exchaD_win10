@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;	//DbSet.ToListAsync()
 
 using exchaD.Data;
 
@@ -12,12 +13,12 @@ namespace exchaD.Controllers
     public class PagesController : Controller
     {
 		//メンバ
-		private readonly ExchaDContext5 _context;
+		private readonly ExchaDContext5 context;
 		
 		//コンストラクタ
-		public PagesController(ExchaDContext5 context)
+		public PagesController(ExchaDContext5 c)
 		{
-			_context = context;
+			context = c;
 		}
 
 		//デフォルトのアクション----------------------------------------
@@ -25,10 +26,10 @@ namespace exchaD.Controllers
 		{
 			return View("~/Views/Pages/top.cshtml");
 		}
-		//---------------------------------------------------------------
-		public IActionResult diaries()
+		//日記一覧の表示---------------------------------------------------------------
+		public async Task<IActionResult> diaries()
 		{
-			return View();
+			return View(await context.diaries.ToListAsync());
 		}
 		//---------------------------------------------------------------
 		public IActionResult diary()

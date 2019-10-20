@@ -14,12 +14,12 @@ namespace exchaD.Controllers
     public class RegisterController : Controller
     {
 		//メンバ
-		private readonly ExchaDContext5 _context;
+		private readonly ExchaDContext5 context;
 
 		//コンストラクタ
-		public RegisterController(ExchaDContext5 context)
+		public RegisterController(ExchaDContext5 c)
 		{
-			_context = context;
+			context = c;
 		}
 
 		//デフォルトのアクション
@@ -39,8 +39,8 @@ namespace exchaD.Controllers
 			{
 				Diary diary = new Diary(Id, pass, note, DateTime.Now, pub, EXCHA.disable, WRITA.able, DateTime.Now, null);
 
-				_context.diaries.Add(diary);	//SQL文の予約
-				await _context.SaveChangesAsync();	//SQL文の実行
+				context.diaries.Add(diary);	//SQL文の予約
+				await context.SaveChangesAsync();	//SQL文の実行
 				return View("~/Views/Pages/login.cshtml");
 			}//無効のとき
 			else

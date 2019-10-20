@@ -32,7 +32,6 @@ namespace exchaD.Data
 	public class Diary
 	{
 		const int maxId = 255;
-		const int maxPass = 255;
 		const int maxNote = 255;
 
 		//コンストラクタ
@@ -54,7 +53,6 @@ namespace exchaD.Data
 		public string Id { get; set; }   //主キー	//慣例により「なんたらId」はキーとなる。注意。
 
 		[Required]
-		[MaxLength(maxPass)]
 		public string pass { get; set; }
 
 		[MaxLength(maxNote)]
