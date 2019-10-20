@@ -1,0 +1,35 @@
+﻿@model exchaD.Data.Diary
+@{
+    ViewData["Title"] = "ログインページ";
+}
+
+<h1>ログインページ</h1>
+<div class="headerline1"></div>
+
+<h2 class="leftBlock">日記を手に取る</h2>
+<form method="post" asp-controller="register">
+    <!-- 日記ID -->
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <label asp-for="Id" class="control-label rowRight" for="diaryId">日記ID</label>
+        </div>
+        <div class="col-sm-6">
+            <input id="diaryId" type="text" asp-for="Id" class="form-control" required placeholder="日記IDを入力" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- パスワード1 -->
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <label asp-for="pass" class="control-label rowRight">日記の鍵</label>
+        </div>
+        <div class="col-sm-6">
+            <input id="pass1" type="password" asp-for="pass" class="form-control" required placeholder="日記の鍵を入力" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+    </div>
+</form>
+
+<h2 class="leftBlock">日記をまだ作っていない方はこちら</h2>
+<a href="/Pages/register" class="h5 lineLink" style="margin-left:1em;">日記を新しく作る</a>

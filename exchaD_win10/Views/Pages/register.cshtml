@@ -1,0 +1,78 @@
+﻿@model exchaD.Data.Diary
+@using exchaD.Data
+@{
+    //※
+    //タグヘルパー asp-xxxを使用する
+    //asp-forで対象のオブジェクトのメンバを指定できる
+    //使用のために、@modelに、使用するオブジェクトを記載する
+}
+@{
+    ViewData["Title"] = "日記の作成";
+}
+
+<h1>日記の作成</h1>
+<div class="headerline1"></div>
+
+<form method="post" asp-controller="register" asp-action="Index">
+
+    <!-- 日記ID -->
+    <div class="form-group row">
+        @Html.AntiForgeryToken()
+        <div class="col-sm-3">
+            <label class="control-label rowRight" for="diaryId">日記ID</label>
+        </div>
+        <div class="col-sm-6">
+            <input id="diaryId" type="text" asp-for="Id" class="form-control" placeholder="日記にIDを付けてください" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- パスワード1 -->
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <label class="control-label rowRight">日記の鍵</label>
+        </div>
+        <div class="col-sm-6">
+            <input id="pass" type="password" asp-for="pass" class="form-control" placeholder="日記に鍵をかけてください" />
+            <span asp-validation-for="pass" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- パスワード2 -->
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <label class="control-label rowRight">鍵の確認</label>
+        </div>
+        <div class="col-sm-6">
+            <input id="pass2" type="password" class="form-control" placeholder="鍵をもう一度入力してください" />
+        </div>
+    </div>
+
+    <!-- ノート -->
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <label class="control-label rowRight">付箋</label>
+        </div>
+        <div class="col-sm-6">
+            <textarea id="note" asp-for="note" class="form-control" placeholder="日記の紹介などご自由にどうぞ" rows="2"></textarea>
+            <span asp-validation-for="note" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- 公開非公開 -->
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <label class="control-label rowRight">日記の公開非公開</label>
+        </div>
+        <div class="col-sm-6 radio">
+            <input id="diaryPublic" type="radio" name="pub" value="@PUBLICITY.pub" checked><label for="diaryPublic">公開　</label>
+            <input id="diaryPrivate" type="radio" name="pub" value="@PUBLICITY.pri"><label for="diaryPrivate">非公開　</label>
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-sm-3">
+            <input type="submit" value="日記を作成" class="mybtn" style="margin-left: 1em;" />
+        </div>
+    </div>
+</form>

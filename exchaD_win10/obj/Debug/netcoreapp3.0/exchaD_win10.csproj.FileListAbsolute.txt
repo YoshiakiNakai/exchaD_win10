@@ -123,4 +123,16 @@ D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\ru\Microsoft.C
 D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\diaries.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\diary.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\elect.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\login.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\my.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\register.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\top.cshtml.g.cs
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\Razor\Views\Pages\wr.cshtml.g.cs
 D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\obj\Debug\netcoreapp3.0\exchaD_win10.MvcApplicationPartsAssemblyInfo.cache
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\xunit.abstractions.dll
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\xunit.assert.dll
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\xunit.core.dll
+D:\NAKAI\CSharp\exchaD_win10\exchaD_win10\bin\Debug\netcoreapp3.0\xunit.execution.dotnet.dll

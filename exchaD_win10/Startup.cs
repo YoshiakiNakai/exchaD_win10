@@ -27,8 +27,8 @@ namespace exchaD
 		public void ConfigureServices(IServiceCollection services)
 		{
 			//àÀë∂ÇÃíçì¸
-			services.AddDbContext<ExchaDContext>();
-			//services.AddDbContext<ExchaDContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ExchaDContext")));
+			//services.AddDbContext<ExchaDContext5>();
+			services.AddDbContext<ExchaDContext5>(options => options.UseSqlServer(Configuration.GetConnectionString("ExchaDContext5")));
 
 			services.AddControllersWithViews();
 		}

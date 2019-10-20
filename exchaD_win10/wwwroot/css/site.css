@@ -1,27 +1,197 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿/* メモ
+    指定方法
+    　「.」クラス指定、ドットがよく抜けるため注意
+    　「#」id指定
+    　「」なしで要素指定
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    寄せるクラス
+    　text-align
+    　float
+
+    リンク、<a>の装飾について
+    　hover時の下線などは、text-decoration: none;で外せる
+
+    ボタン選択時の縁取りについて
+        outline: none;で選択時の周りの縁取りを消す
+
+    bootstrap
+　    sm:768pxが境
+　    h1:2.5em
+　    h2:2.0em、以下0.25emずつ縮む
+
+    navbar
+    　bootstrapの装飾によりclassでのデザイン変更がまともに効かない
+    　classでのデザイン変更は諦めた方がよい
+    　!importantを使うか、styleで直接指定するか、#idを使うか、
+    　expand:小さい画面では折り畳む
+    　toggle:小さい画面でトグルをつける
+    　などの装飾がついている
+
+
+*/
+/* 背景色、今回は使用しない */
+body {
+    /* background-color: #ffffe0; */
 }
 
+/* 見出しのサイズ調整    */
+h1 {
+    font-size: 110%;
+    color: #731;
+}
+h2 {
+    font-size: 140%;
+}
+h3 {
+    font-size: 120%;
+}
+h4 {
+    font-size: 110%;
+}
+h5 {
+    font-size: 100%;
+}
+h6 {
+    font-size: 100%;
+}
+
+/* h1に下に下線を引く用    */
+.headerline1 {
+    margin-bottom: 0.5em;
+    border-bottom: 2px solid;
+    border-color: #fffacd;
+}
+
+/* ラベル位置調整 */
+label.rowRight {
+    float: left;
+    padding-top: 0.25em;
+    margin-bottom: 1px;
+}/* 画面サイズの横幅が 768px 以上のとき    */
+@media screen and (min-width: 768px)
+{
+    label.rowRight {
+        float: right;
+        padding-top: 0.25em;
+        margin-bottom: 1px;
+    }
+}
+
+/* ラジオボタンなど用の位置調整   */
+.radio {
+    padding-top: 0.25em;
+}
+
+/* 左側ブロック見出し    */
+.leftBlock {
+    padding-left: 0.20em;
+    border-left: 0.25em solid;
+    border-color: #f4a460;
+}
+
+/* ボタン形式のスタイル*/
+.mybtn {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #620;
+    border-color: #fed;
+    border-radius: 6px; /*角の丸み*/
+    font-weight: bold;
+    outline: none;  /* 選択時の周りの縁取りを消す    */
+}/* マウスホバー時 */
+.mybtn:hover {
+    background-color: #b41;
+}/* マウスクリック時    */
+.mybtn:active {
+    background-color: #f83;
+}
+
+/* ボタン型のリンク */
+a.btnlink {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    color: #fff;    /* 文字の色 */
+    background-color: #731;
+    border-color: #fed;
+    border-radius: 6px; /*角の丸み*/
+    outline: none; /* 選択時の周りの縁取りを消す    */
+}
+/* マウスホバー時 */
+a.btnlink:hover {
+    background-color: #b41;
+    text-decoration: underline; /* textに下線を引く*/
+}
+/* マウスクリック時    */
+a.btnlink:active {
+    background-color: #f83;
+}
+
+/* リンク 下線アニメ */
+a.lineLink {
+    padding: 0.2em 0.3em;
+    position: relative;
+    display: inline-block;
+    transition: .2s;
+    color: #731; /* 文字の色 */
+    text-decoration: none;
+}/* ホバー時、文字を下げる    */
+a.lineLink:hover {
+    transform: translate(0, 0.04em);
+}/* 下線の疑似要素 */
+a.lineLink::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: #f4a460; /* 下線の色 */
+	transition: .2s;
+}/* ホバー時、下線要素の幅を100%にする    */
+a.lineLink:hover::after {
+    width: 100%;
+}
+
+/* navbar */
+.navbar.navbar-expand-sm.navbar-toggleable-sm.navbar-light {
+    background-color: #f5deb3;
+}
+
+/* 以下、default設定 ------------------------------------------------    */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
+}
+a.navbar-brand{
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
+
+/* ボタンのスタイル */
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #620;
+    border-color: #fed;
+}/* マウスホバー時    */
+.btn-primary:hover {
+    background-color: #b41;
+}/* マウスクリック時、どこかと競合しているのか変化しない    */
+.btn-primary:active {
+    background-color: #f83;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles

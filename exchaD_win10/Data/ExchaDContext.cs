@@ -4,30 +4,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-using exchaD.Models;
-
-
 namespace exchaD.Data
 {
 	//DB定義
-	public class ExchaDContext : DbContext
+	public class ExchaDContext5 : DbContext
 	{
 		//コンストラクタ
-		public ExchaDContext(DbContextOptions<ExchaDContext> options)
+		public ExchaDContext5(DbContextOptions<ExchaDContext5> options)
 			: base(options)
 		{
 		}
 
 		//テーブル定義
-		public DbSet<Diary> diaries;
-		public DbSet<Leaf> leaves;
-		public DbSet<Appli> appli;
-		
+		public DbSet<Diary> diaries { get; set; }
+		public DbSet<Leaf> leaves { get; set; }
+		public DbSet<Appli> appli { get; set; }
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			//複合主キーの定義
 			modelBuilder.Entity<Leaf>()
-				.HasKey(o => new { o.diaryId, o.time });
+				.HasKey(o => new { o.diaryId, o.time });	//get, setをつけていないとここでバグる
 
 			modelBuilder.Entity<Appli>()
 				.HasKey(o => new { o.diaryId, o.leafTime });
