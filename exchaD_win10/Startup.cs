@@ -30,6 +30,9 @@ namespace exchaD
 			//services.AddDbContext<ExchaDContext5>();
 			services.AddDbContext<ExchaDContext5>(options => options.UseSqlServer(Configuration.GetConnectionString("ExchaDContext5")));
 
+			//クッキーの使用
+			//services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
 			services.AddControllersWithViews();
 		}
 

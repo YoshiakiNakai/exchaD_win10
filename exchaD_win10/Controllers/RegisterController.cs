@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-
 using exchaD.Data;
 
 namespace exchaD.Controllers
 {
 	//登録処理を担う
-    public class RegisterController : Controller
+	public class RegisterController : Controller
     {
 		//メンバ
 		private readonly ExchaDContext5 context;
